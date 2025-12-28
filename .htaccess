@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Prevent directory listing
+Options -Indexes
+
+# If the request is not a directory
+RewriteCond %{REQUEST_FILENAME} !-d
+# And the file with .php extension exists
+RewriteCond %{REQUEST_FILENAME}.php -f
+# Rewrite the request to .php
+RewriteRule ^(.*)$ $1.php [L]
+
+# Optional: Force clean URLs (Redirect .php to non-.php)
+# RewriteCond %{THE_REQUEST} \.php [NC]
+# RewriteRule ^(.*)\.php$ $1 [R=301,L]
