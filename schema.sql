@@ -31,8 +31,8 @@ CREATE TABLE `users` (
 -- Hash: $2y$10$ExampleHashForPassword123.......................
 
 INSERT INTO `users` (`full_name`, `email`, `phone`, `password_hash`) VALUES
-('Imran Sani', 'john@example.com', '08012345678', '$2y$10$e.g./hash/for/password123/placeholder'), -- Replace with real hash if needed, using a known working hash below
-('Hassan Umar', 'jane@test.com', '08087654321', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa'), -- 'admin123' reused as user pass for simplicity
+('Imran Sani', 'imran@example.com', '08012345678', '$2y$10$e.g./hash/for/password123/placeholder'), -- Replace with real hash if needed, using a known working hash below
+('Hassan Umar', 'hassan@test.com', '08087654321', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa'), -- 'admin123' reused as user pass for simplicity
 ('Aliyu Musa', 'aliyu@demo.com', '09011223344', '$2y$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa'); -- 'admin123' reused
 
 
@@ -79,11 +79,31 @@ CREATE TABLE `bookings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Seed Bookings (Optional)
+-- Seed Bookings
 --
 INSERT INTO `bookings` (`user_id`, `chick_type`, `quantity`, `pickup_date`, `status`) VALUES
 (1, 'Broiler', 50, DATE_ADD(CURRENT_DATE, INTERVAL 5 DAY), 'pending'),
 (2, 'Layer', 100, DATE_ADD(CURRENT_DATE, INTERVAL 10 DAY), 'confirmed'),
-(3, 'Cockerel', 20, DATE_ADD(CURRENT_DATE, INTERVAL 2 DAY), 'cancelled');
+(3, 'Cockerel', 20, DATE_ADD(CURRENT_DATE, INTERVAL 2 DAY), 'cancelled'),
+(1, 'Layer', 25, DATE_ADD(CURRENT_DATE, INTERVAL 7 DAY), 'pending'),
+(2, 'Broiler', 60, DATE_ADD(CURRENT_DATE, INTERVAL 3 DAY), 'pending'),
+(3, 'Cockerel', 40, DATE_ADD(CURRENT_DATE, INTERVAL 12 DAY), 'confirmed'),
+(1, 'Broiler', 150, DATE_ADD(CURRENT_DATE, INTERVAL 15 DAY), 'pending'),
+(2, 'Layer', 80, DATE_ADD(CURRENT_DATE, INTERVAL 8 DAY), 'confirmed'),
+(3, 'Layer', 30, DATE_ADD(CURRENT_DATE, INTERVAL 20 DAY), 'pending'),
+(1, 'Cockerel', 55, DATE_ADD(CURRENT_DATE, INTERVAL 4 DAY), 'completed'),
+(2, 'Broiler', 120, DATE_ADD(CURRENT_DATE, INTERVAL 10 DAY), 'cancelled'),
+(3, 'Layer', 45, DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY), 'pending'),
+(1, 'Broiler', 200, DATE_ADD(CURRENT_DATE, INTERVAL 18 DAY), 'pending'),
+(2, 'Cockerel', 10, DATE_ADD(CURRENT_DATE, INTERVAL 1 DAY), 'completed'),
+(3, 'Layer', 90, DATE_ADD(CURRENT_DATE, INTERVAL 9 DAY), 'confirmed'),
+(1, 'Layer', 70, DATE_ADD(CURRENT_DATE, INTERVAL 25 DAY), 'pending'),
+(2, 'Broiler', 35, DATE_ADD(CURRENT_DATE, INTERVAL 6 DAY), 'pending'),
+(3, 'Cockerel', 25, DATE_ADD(CURRENT_DATE, INTERVAL 11 DAY), 'pending'),
+(1, 'Layer', 110, DATE_ADD(CURRENT_DATE, INTERVAL 16 DAY), 'confirmed'),
+(2, 'Broiler', 50, DATE_ADD(CURRENT_DATE, INTERVAL 22 DAY), 'pending'),
+(3, 'Layer', 65, DATE_ADD(CURRENT_DATE, INTERVAL 13 DAY), 'pending'),
+(1, 'Cockerel', 85, DATE_ADD(CURRENT_DATE, INTERVAL 5 DAY), 'confirmed'),
+(2, 'Broiler', 75, DATE_ADD(CURRENT_DATE, INTERVAL 19 DAY), 'pending');
 
 COMMIT;
